@@ -1,0 +1,35 @@
+.homecontainer-uppermenu-library{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.homecontainer-uppermenu-library-h3{
+    color : #F9F9F9;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    user-select: none;
+}
+.homecontainer-uppermenu-library-h3:hover{
+    text-shadow: 2px 2px 8px;
+}
+
+.homecontainer-uppermenu-library-alt{
+    display: none;
+    position:absolute;
+    z-index: 1;
+    background-color: rgb(29, 29, 29);
+    height: 150px;
+    width: 80px;
+    flex-direction: column;
+    top: 78%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.homecontainer-uppermenu-library-alt-as{
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}

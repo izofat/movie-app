@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <script src="https://kit.fontawesome.com/5132705292.js" crossorigin="anonymous"></script>
+    <title>Buse Favorites</title>
+</head>
+<body>
+    <div id="home" class="homecontainer">
+        <div class="homecontainer-leftmenu">
+            <div class="homecontainer-leftmenu-logo">
+                <span>Buse</span>
+                <span>Movies</span>
+            </div>
+            <div class="homecontainer-leftmenu-menu">
+                <h3 class="homecontainer-leftmenu-menu-h3">Menu</h3>
+                <a class="homecontainer-leftmenu-menu-as" href="index.html">Home</a>
+                <a class="homecontainer-leftmenu-menu-as">Discover</a>
+                <a class="homecontainer-leftmenu-menu-as">Awards</a>
+                <a class="homecontainer-leftmenu-menu-as">Celebrities</a>
+            </div>
+            <div class="homecontainer-leftmenu-library">
+                <h3 class="homecontainer-leftmenu-library-h3">Library</h3>
+                <a class="homecontainer-leftmenu-library-as">Top Rated</a>
+                <a class="homecontainer-leftmenu-library-as">Downloaded</a>
+                <a class="homecontainer-leftmenu-library-as" href="">Favorites</a>
+                <a class="homecontainer-leftmenu-library-as">Watchlist</a>
+                <a class="homecontainer-leftmenu-library-as">Completed</a>
+            </div>
+            <div class="homecontainer-leftmenu-general">
+                <h3 class="homecontainer-leftmenu-general-h3">General</h3>
+                <a class="homecontainer-leftmenu-general-as">Settings</a>
+                <a class="homecontainer-leftmenu-general-as">Log out</a>
+            </div>
+        </div>
+        <div class="homecontainer-uppermenu">
+            <!--responsive-->
+            <div class="homecontainer-uppermenu-logo">
+                <span>Buse</span>
+                <span>Movies</span>
+            </div>
+            <div class="homecontainer-uppermenu-menu">
+                <h3 class="homecontainer-uppermenu-menu-h3" id="uppermenuMenuH3" onclick="h3Clicked('menuAlt','angleMenu')">Menu  <i class="fa-solid fa-angle-down" id="angleMenu"></i></h3>
+                <div class="homecontainer-uppermenu-menu-alt" id="menuAlt">
+                    <a class="homecontainer-uppermenu-menu-alt-as">Home</a>
+                    <a class="homecontainer-uppermenu-menu-alt-as">Discover</a>
+                    <a class="homecontainer-uppermenu-menu-alt-as">Awards</a>
+                    <a class="homecontainer-uppermenu-menu-alt-as">Celebrities</a>
+                </div>
+            </div>
+            <div class="homecontainer-uppermenu-library">
+                <h3 class="homecontainer-uppermenu-library-h3" id="uppermenuLibraryH3" onclick="h3Clicked('libraryAlt','angleLibrary')">Library  <i class="fa-solid fa-angle-down" id="angleLibrary"></i></h3>
+                <div class="homecontainer-uppermenu-library-alt" id="libraryAlt">
+                    <a class="homecontainer-uppermenu-library-alt-as">Top Rated</a>
+                    <a class="homecontainer-uppermenu-library-alt-as">Downloaded</a>
+                    <a class="homecontainer-uppermenu-library-alt-as">Favorites</a>
+                    <a class="homecontainer-uppermenu-library-alt-as">Watchlist</a>
+                    <a class="homecontainer-uppermenu-library-alt-as">Completed</a>
+                </div>
+            </div>
+            <div class="homecontainer-uppermenu-general">
+                <h3 class="homecontainer-uppermenu-general-h3" id="uppermenuGeneralH3" onclick="h3Clicked('generalAlt','angleGeneral')">General  <i class="fa-solid fa-angle-down" id="angleGeneral"></i></h3>
+                <div class="homecontainer-uppermenu-general-alt" id="generalAlt">
+                    <a class="homecontainer-uppermenu-general-alt-as">Settings</a>
+                    <a class="homecontainer-uppermenu-general-alt-as">Log out</a>
+                </div>
+            </div>
+        </div>
+        <div class="homecontainer-centermenu" style="align-items: center;">
+            <h1 class="homecontainer-centermenu-popular-announce">Favorites</h1>
+            <div class="homecontainer-centermenu-popular" id="favorite" style="width: 100%;">
+                <h1 class="homecontainer-centermenu-popular-announce">Movies</h1>
+                <div class="homecontainer-centermenu-popular-alt" id="moviesAlt">
+                                        
+                </div>
+                <h1 class="homecontainer-centermenu-popular-announce">TV Shows</h1>
+                <div class="homecontainer-centermenu-popular-alt" id="tvshowsAlt">
+                                        
+                </div>
+            </div>                    
+        </div>
+    </div>
+    <script src="../assets/favorites.js"></script>
+</body>
+</html>

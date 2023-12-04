@@ -1,0 +1,24 @@
+@import url('/style/leftmenu/leftmenu.css');
+@import url('/style/uppermenu/uppermenu.css');
+@import url('/style/centermenu/centermenu.css');
+@import url('/style/favorites/favorites.css');
+
+html , body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.homecontainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: black;
+}
+a{
+    text-decoration: none;
+}
+@media screen and (max-width:600px) {
+    .homecontainer{
+        flex-direction: column;
+    }
+}

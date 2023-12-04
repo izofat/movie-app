@@ -1,0 +1,19 @@
+@import url('sidebar.css');
+@import url('platforms.css');
+@import url('search.css');
+@import url('slideshow.css');
+@import url('popular.css');
+
+
+.homecontainer-centermenu{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 100%;
+}
+@media screen  and (max-width: 600px){
+    .homecontainer-centermenu{
+        height: 90%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,91 @@
+.fa-regular{
+    color: white;
+}
+
+.homecontainer-centermenu-popular{
+    height: 41%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#favorite.homecontainer-centermenu-popular{
+    height: 90%;
+}
+.homecontainer-centermenu-popular-announce{
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    color: #F8B319;
+
+}
+.homecontainer-centermenu-popular-alt{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#moviesAlt.homecontainer-centermenu-popular-alt , #tvshowsAlt.homecontainer-centermenu-popular-alt{
+    overflow: auto;
+    overflow-y: hidden;
+}
+.homecontainer-centermenu-popular-alt-box{
+    position: relative;
+    width: 190px;
+    height: 233px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+.homecontainer-centermenu-popular-alt-box-h1{
+    position: absolute;
+    left: 5%;
+    font-size: 22px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+.homecontainer-centermenu-popular-alt-box-favoritebutton{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    background-color: rgb(231, 6, 6);
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.homecontainer-centermenu-popular-alt-box-img{
+    width: 215px;
+    height: 233px;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:800px) {
+    .homecontainer-centermenu-popular-alt-box , .homecontainer-centermenu-popular-alt-box-img{
+        width: 190px;
+        height: 210px;
+    }
+}
+
+@media screen and (max-width : 700px) {
+    .homecontainer-centermenu-popular-alt-box , .homecontainer-centermenu-popular-alt-box-img{
+        width: 170px;
+        height: 210px;
+    }
+}
+@media screen and (max-width:600px) {
+    .homecontainer-centermenu-popular-alt{
+        justify-content: stretch;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+}

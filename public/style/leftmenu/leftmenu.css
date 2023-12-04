@@ -1,0 +1,19 @@
+@import url('logo.css');
+@import url('menu.css');
+@import url('library.css');
+@import url('general.css');
+
+.homecontainer-leftmenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 15%;
+    border-right: 1px solid;
+    border-color: rgb(77, 77, 77);
+}
+@media screen and (max-width:600px) {
+    .homecontainer-leftmenu{
+        display: none;
+    }
+}

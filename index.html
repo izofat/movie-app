@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/5132705292.js" crossorigin="anonymous"></script>
+    <title>Cibili Movies</title>
+</head>
+
+<body>
+    <div id="home" class="homecontainer">
+        <div class="homecontainer-leftmenu">
+            <div class="homecontainer-leftmenu-logo">
+                <span>Buse</span>
+                <span>Movies</span>
+            </div>
+            <div class="homecontainer-leftmenu-menu">
+                <h3 class="homecontainer-leftmenu-menu-h3">Menu</h3>
+                <a class="homecontainer-leftmenu-menu-as" href="index.html">Home</a>
+                <a class="homecontainer-leftmenu-menu-as">Discover</a>
+                <a class="homecontainer-leftmenu-menu-as">Awards</a>
+                <a class="homecontainer-leftmenu-menu-as">Celebrities</a>
+            </div>
+            <div class="homecontainer-leftmenu-library">
+                <h3 class="homecontainer-leftmenu-library-h3">Library</h3>
+                <a class="homecontainer-leftmenu-library-as">Top Rated</a>
+                <a class="homecontainer-leftmenu-library-as">Downloaded</a>
+                <a class="homecontainer-leftmenu-library-as" href="/view/favorites.html">Favorites</a>
+                <a class="homecontainer-leftmenu-library-as">Watchlist</a>
+                <a class="homecontainer-leftmenu-library-as">Completed</a>
+            </div>
+            <div class="homecontainer-leftmenu-general">
+                <h3 class="homecontainer-leftmenu-general-h3">General</h3>
+                <a class="homecontainer-leftmenu-general-as">Settings</a>
+                <a class="homecontainer-leftmenu-general-as">Log out</a>
+            </div>
+        </div>
+        <div class="homecontainer-uppermenu">
+            <!--responsive-->
+            <div class="homecontainer-uppermenu-logo">
+                <span>Buse</span>
+                <span>Movies</span>
+            </div>
+            <div class="homecontainer-uppermenu-menu">
+                <h3 class="homecontainer-uppermenu-menu-h3" id="uppermenuMenuH3" onclick="h3Clicked('menuAlt','angleMenu')">Menu  <i class="fa-solid fa-angle-down" id="angleMenu"></i></h3>
+                <div class="homecontainer-uppermenu-menu-alt" id="menuAlt">
+                    <a class="homecontainer-uppermenu-menu-alt-as">Home</a>
+                    <a class="homecontainer-uppermenu-menu-alt-as">Discover</a>
+                    <a class="homecontainer-uppermenu-menu-alt-as">Awards</a>
+                    <a class="homecontainer-uppermenu-menu-alt-as">Celebrities</a>
+                </div>
+            </div>
+            <div class="homecontainer-uppermenu-library">
+                <h3 class="homecontainer-uppermenu-library-h3" id="uppermenuLibraryH3" onclick="h3Clicked('libraryAlt','angleLibrary')">Library  <i class="fa-solid fa-angle-down" id="angleLibrary"></i></h3>
+                <div class="homecontainer-uppermenu-library-alt" id="libraryAlt">
+                    <a class="homecontainer-uppermenu-library-alt-as">Top Rated</a>
+                    <a class="homecontainer-uppermenu-library-alt-as">Downloaded</a>
+                    <a class="homecontainer-uppermenu-library-alt-as">Favorites</a>
+                    <a class="homecontainer-uppermenu-library-alt-as">Watchlist</a>
+                    <a class="homecontainer-uppermenu-library-alt-as">Completed</a>
+                </div>
+            </div>
+            <div class="homecontainer-uppermenu-general">
+                <h3 class="homecontainer-uppermenu-general-h3" id="uppermenuGeneralH3" onclick="h3Clicked('generalAlt','angleGeneral')">General  <i class="fa-solid fa-angle-down" id="angleGeneral"></i></h3>
+                <div class="homecontainer-uppermenu-general-alt" id="generalAlt">
+                    <a class="homecontainer-uppermenu-general-alt-as">Settings</a>
+                    <a class="homecontainer-uppermenu-general-alt-as">Log out</a>
+                </div>
+            </div>
+        </div>
+        <div class="homecontainer-centermenu">
+            <div class="homecontainer-centermenu-bar">
+                <div class="homecontainer-centermenu-bar-platforms">
+                    <span class="homecontainer-centermenu-bar-platforms-as" onclick="setPlatforms(this),bringMovies()" id="platformMovies">Movies</span>
+                    <span class="homecontainer-centermenu-bar-platforms-as" onclick="setPlatforms(this),bringTVShows()" id="platformTV">TV Shows</span>
+                </div>
+                <div class="homecontainer-centermenu-bar-search">        
+                    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;" onclick="searchIconClicked(this)" id="searchIcon"></i>               
+                    <input type="text" class="homecontainer-centermenu-bar-search-input" placeholder="Search" id="searchInput">                    
+                </div>
+            </div>
+            <div class="homecontainer-centermenu-slideshow">
+                <h1 class="homecontainer-centermenu-slideshow-announce">New Release</h1>
+                <div class="homecontainer-centermenu-slideshow-alt">
+                    <h2 class="homecontainer-centermenu-slideshow-alt-h2" id="movieTitle"></h2>
+                    <button class="homecontainer-centermenu-slideshow-alt-button" id="leftButton" onclick="changeSlideshow(this)"><i class="fa-solid fa-chevron-left fa-xl" id="rightIcon"></i></button>
+                    <button class="homecontainer-centermenu-slideshow-alt-button" id="rightButton" onclick="changeSlideshow(this)"><i class="fa-solid fa-chevron-right fa-xl" id="leftIcon"></i></button>
+                    <button class="homecontainer-centermenu-slideshow-alt-favoritebutton" id="favoriteButton" onclick="setFavorite(this)" ><i class="fa-regular fa-heart fa-2xl" style="color: #ffffff;" id="favoriteIcon"></i></button>
+                    <div class="homecontainer-centermenu-slideshow-alt-progressbar" id="progressBar"><i class="fa-solid fa-circle fa-xs" id="dotIndex0"></i><i class="fa-regular fa-circle fa-xs" id="dotIndex1"></i><i class="fa-regular fa-circle fa-xs" id="dotIndex2"></i></div>
+                    <img src="" class="homecontainer-centermenu-slideshow-alt-img" id="imgUpcoming">
+                </div>
+            </div>
+            <div class="homecontainer-centermenu-popular">
+                <h1 class="homecontainer-centermenu-popular-announce">Popular</h1>
+                <div class="homecontainer-centermenu-popular-alt">
+                    <div class="homecontainer-centermenu-popular-alt-box">
+                        <h3 class="homecontainer-centermenu-popular-alt-box-h1" id="moviePopularTitleIndex0">Title</h3>
+                        <button class="homecontainer-centermenu-popular-alt-box-favoritebutton" onclick="setFavorite(this)" id="favoriteButtonIndex0" ><i class="fa-regular fa-heart fa-xl" style="color: #ffffff;" id="favoriteIconIndex0"></i></button>
+                        <button class="homecontainer-centermenu-popular-alt-box-morebutton">More info</button>
+                        <img id="imgPopularIndex0"  src="" class="homecontainer-centermenu-popular-alt-box-img">
+                    </div>
+                    <div class="homecontainer-centermenu-popular-alt-box">
+                        <h3 class="homecontainer-centermenu-popular-alt-box-h1" id="moviePopularTitleIndex1">Title</h3>
+                        <button class="homecontainer-centermenu-popular-alt-box-favoritebutton" onclick="setFavorite(this)" id="favoriteButtonIndex1"><i class="fa-regular fa-heart fa-xl" style="color: #ffffff;" id="favoriteIconIndex1" ></i></button>
+                        <button class="homecontainer-centermenu-popular-alt-box-morebutton">More info</button>
+                        <img id="imgPopularIndex1" src="" class="homecontainer-centermenu-popular-alt-box-img">
+                    </div>
+                    <div class="homecontainer-centermenu-popular-alt-box">
+                        <h3 class="homecontainer-centermenu-popular-alt-box-h1" id="moviePopularTitleIndex2">Title</h3>
+                        <button class="homecontainer-centermenu-popular-alt-box-favoritebutton" onclick="setFavorite(this)" id="favoriteButtonIndex2" ><i class="fa-regular fa-heart fa-xl" style="color: #ffffff;" id="favoriteIconIndex2" ></i></button>
+                        <button class="homecontainer-centermenu-popular-alt-box-morebutton">More info</button>
+                        <img id="imgPopularIndex2" src="" class="homecontainer-centermenu-popular-alt-box-img" >
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
