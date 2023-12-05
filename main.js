@@ -148,9 +148,6 @@ function changeSlideshow(element) {
 }
 
 function setSlideshow() {
-
-
-
     var elementImg = document.getElementById('imgUpcoming');
     var elementMovieTitle = document.getElementById('movieTitle');
     if (platform == 'movies') {
@@ -169,8 +166,19 @@ function setSlideshow() {
         }
     }
     else {
+       
         elementImg.src = upcomingTVShows[index].backdropPath;
         elementMovieTitle.textContent = upcomingTVShows[index].title;
+        let favorites = JSON.parse(localStorage.getItem('favoriteTVShows'));
+        var elementFavoriteIcon = document.getElementById('favoriteIcon');
+        if(favorites.some(id => id == upcomingTVShows[index].id)){
+            elementFavoriteIcon.classList.remove('fa-regular');
+            elementFavoriteIcon.classList.add('fa-solid');
+        }
+        else{
+            elementFavoriteIcon.classList.remove('fa-solid');
+            elementFavoriteIcon.classList.add('fa-regular');
+        }
     }
     var elementDotIndex0 = document.getElementById('dotIndex0');
     var elementDotIndex1 = document.getElementById('dotIndex1');
@@ -217,8 +225,9 @@ function showPopulars(type) {
     elementIcon1.classList.add('fa-regular');
     elementIcon2.classList.remove('fa-solid');
     elementIcon2.classList.add('fa-regular');
+
     for(let i = 0 ; i < popularMovies.length ; i++){
-        if(favorites.some(id => id == popularMovies[i].id)){
+        if(favorites.some(id => id == popularMovies[i].id) || favorites.some(id => id == popularTVShows[i].id)){
             var elementButton = null;
             switch(i){
                 case 0:{
@@ -330,7 +339,6 @@ function bringTVShows() {
     setSlideshow()
 }
 
-
 function removeClasses() {
     var elementDotIndex0 = document.getElementById('dotIndex0');
     var elementDotIndex1 = document.getElementById('dotIndex1');
@@ -344,13 +352,12 @@ function removeClasses() {
 }
 
 
-
+//! battle field
 function setFavorite(element) {
-    if (element.id == "favoriteButton") {
+    if (element.id == 'favoriteButton') {
+        
         if (platform == "movies") {
-            let favoriteMovies = [];
-            let unarrayMovies = localStorage.getItem('favoriteMovies');
-            favoriteMovies = JSON.parse(unarrayMovies);            
+            let favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies'));                        
             if(!favoriteMovies.some(id => id == upcomingMovies[index].id)){
                 favoriteMovies.push(upcomingMovies[index].id);
                 localStorage.setItem('favoriteMovies', JSON.stringify(favoriteMovies));
@@ -361,15 +368,14 @@ function setFavorite(element) {
             } 
         }
         else{
-            let favoriteTVShows = [];
-            let unarrayTVShows = localStorage.getItem('favoriteTVShows');
-            favoriteTVShows = JSON.parse(unarrayTVShows);
+            let favoriteTVShows = JSON.parse(localStorage.getItem('favoriteTVShows'));   
             if(!favoriteTVShows.some(id => id == upcomingTVShows[index].id)){
-                favoriteTVShows.push(upcomingMovies[index].id);
+                favoriteTVShows.push(upcomingTVShows[index].id);
                 localStorage.setItem('favoriteTVShows', JSON.stringify(favoriteTVShows));
             } 
             else{
-                favoriteTVShows = favoriteTVShows.filter(id => id != upcomingtvfavoriteTVShows[index].id);
+                console.log(upcomingTVShows);
+                favoriteTVShows = favoriteTVShows.filter(id => id != upcomingTVShows[index].id);
                 localStorage.setItem('favoriteTVShows', JSON.stringify(favoriteTVShows));
             }
         }
@@ -433,8 +439,8 @@ function setFavorite(element) {
                 localStorage.setItem('favoriteTVShows', JSON.stringify(favoriteTVShows));
             }
         }
-        showPopulars(platform);
+        showPopulars(platform);  
     }
    
 }
-
+//! 
