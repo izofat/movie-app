@@ -4,7 +4,6 @@ let popularMovies = [];
 let upcomingTVShows = [];
 let popularTVShows = [];
 
-
 window.onload = async function () {
     var elementMovies = document.getElementById('platformMovies');
     elementMovies.classList.add('homecontainer-centermenu-bar-platforms-as-active');
@@ -60,7 +59,6 @@ window.onload = async function () {
         }
         popularTVShows.push(movie);
     }
-
     bringMovies();
     slideshow();
 }

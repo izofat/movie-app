@@ -76,42 +76,44 @@
                     <span class="homecontainer-centermenu-bar-platforms-as" onclick="setPlatforms(this),bringMovies()" id="platformMovies">Movies</span>
                     <span class="homecontainer-centermenu-bar-platforms-as" onclick="setPlatforms(this),bringTVShows()" id="platformTV">TV Shows</span>
                 </div>
-                <div class="homecontainer-centermenu-bar-search">        
+                
+                <div class="flex flex-row gap-5 bg-stone-950 w-60 h-10 rounded-xl items-center justify-center">        
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;" onclick="searchIconClicked(this)" id="searchIcon"></i>               
-                    <input type="text" class="homecontainer-centermenu-bar-search-input" placeholder="Search" id="searchInput">                    
+                    <input type="text" class="bg-stone-950 w-44 h-9 text-xl text-white font-segoe font-medium focus:outline-none" placeholder="Search" id="searchInput">                    
                 </div>
             </div>
             <div class="homecontainer-centermenu-slideshow">
-                <h1 class="homecontainer-centermenu-slideshow-announce">New Release</h1>
-                <div class="homecontainer-centermenu-slideshow-alt">
-                    <h2 class="homecontainer-centermenu-slideshow-alt-h2" id="movieTitle"></h2>
-                    <button class="homecontainer-centermenu-slideshow-alt-button" id="leftButton" onclick="changeSlideshow(this)"><i class="fa-solid fa-chevron-left fa-xl" id="rightIcon"></i></button>
-                    <button class="homecontainer-centermenu-slideshow-alt-button" id="rightButton" onclick="changeSlideshow(this)"><i class="fa-solid fa-chevron-right fa-xl" id="leftIcon"></i></button>
-                    <button class="homecontainer-centermenu-slideshow-alt-favoritebutton" id="favoriteButton" onclick="setFavorite(this)" ><i class="fa-regular fa-heart fa-2xl" style="color: #ffffff;" id="favoriteIcon"></i></button>
+                <h1 class="text-yellow-500 font-segoe text-3xl font-black">New Release</h1>
+                <div class="flex justify-center items-center relative">
+                    <h2 class="z-10 text-white absolute font-segoe font-bold text-4xl left-7 top-4" id="movieTitle"></h2>
+                    <button class="absolute z-10 w-11 h-11 rounded-xl bg-white opacity-60 top-1/2 left-7" id="leftButton" onclick="changeSlideshow(this)"><i class="fa-solid fa-chevron-left fa-xl" id="rightIcon"></i></button>
+                    <button class="absolute z-10 w-11 h-11 rounded-xl bg-white opacity-60 top-1/2 right-7" id="rightButton" onclick="changeSlideshow(this)"><i class="fa-solid fa-chevron-right fa-xl" id="leftIcon"></i></button>
+                    <button class="absolute z-10 h-14 w-16 bottom-8 left-10 bg-red-700 border-none rounded-2xl" id="favoriteButton" onclick="setFavorite(this)" ><i class="fa-regular fa-heart fa-2xl" style="color: #ffffff;" id="favoriteIcon"></i></button>
                     <div class="homecontainer-centermenu-slideshow-alt-progressbar" id="progressBar"><i class="fa-solid fa-circle fa-xs" id="dotIndex0"></i><i class="fa-regular fa-circle fa-xs" id="dotIndex1"></i><i class="fa-regular fa-circle fa-xs" id="dotIndex2"></i></div>
                     <img src="" class="homecontainer-centermenu-slideshow-alt-img" id="imgUpcoming">
                 </div>
             </div>
+
             <div class="homecontainer-centermenu-popular">
-                <h1 class="homecontainer-centermenu-popular-announce">Popular</h1>
-                <div class="homecontainer-centermenu-popular-alt">
-                    <div class="homecontainer-centermenu-popular-alt-box">
-                        <h3 class="homecontainer-centermenu-popular-alt-box-h1" id="moviePopularTitleIndex0">Title</h3>
-                        <button class="homecontainer-centermenu-popular-alt-box-favoritebutton" onclick="setFavorite(this)" id="favoriteButtonIndex0" ><i class="fa-regular fa-heart fa-xl" style="color: #ffffff;" id="favoriteIconIndex0"></i></button>
-                        <button class="homecontainer-centermenu-popular-alt-box-morebutton">More info</button>
-                        <img id="imgPopularIndex0"  src="" class="homecontainer-centermenu-popular-alt-box-img">
+                <h1 class="text-2xl font-segoe font-extrabold text-yellow-500">Popular</h1>
+                <div class="w-full flex flex-row items-center justify-evenly">
+                    <div class="relative w-48 h-60 bg-white rounded-xl">
+                        <h3 class="absolute left-5 text-xl text-white font-segoe font-bold z-10 bg-gray-600" id="moviePopularTitleIndex0">Title</h3>
+                        <button class="absolute bottom-4 left-3 bg-red-700 w-9 h-9 border-none rounded-lg z-10" onclick="setFavorite(this)" id="favoriteButtonIndex0" ><i class="fa-regular fa-heart fa-xl" style="color: #ffffff;" id="favoriteIconIndex0"></i></button>
+                        <button class="absolute right-3 bottom-4 h-9 w-32 rounded-xl border-none text-black text-sm font-segoe font-extrabold bg-yellow-400 z-10">More info</button>
+                        <img id="imgPopularIndex0"  src="" class="w-48 h-60 z-0 rounded-xl">
                     </div>
-                    <div class="homecontainer-centermenu-popular-alt-box">
-                        <h3 class="homecontainer-centermenu-popular-alt-box-h1" id="moviePopularTitleIndex1">Title</h3>
-                        <button class="homecontainer-centermenu-popular-alt-box-favoritebutton" onclick="setFavorite(this)" id="favoriteButtonIndex1"><i class="fa-regular fa-heart fa-xl" style="color: #ffffff;" id="favoriteIconIndex1" ></i></button>
-                        <button class="homecontainer-centermenu-popular-alt-box-morebutton">More info</button>
-                        <img id="imgPopularIndex1" src="" class="homecontainer-centermenu-popular-alt-box-img">
+                    <div class="relative w-48 h-60 bg-white rounded-xl">
+                        <h3 class="absolute left-3 text-xl text-white font-segoe font-bold z-10 bg-gray-600" id="moviePopularTitleIndex1">Title</h3>
+                        <button class="absolute bottom-4 left-3 bg-red-700 w-9 h-9 border-none rounded-lg z-10" onclick="setFavorite(this)" id="favoriteButtonIndex1"><i class="fa-regular fa-heart fa-xl" style="color: #ffffff;" id="favoriteIconIndex1" ></i></button>
+                        <button class="absolute right-3 bottom-4 h-9 w-32 rounded-xl border-none text-black text-sm font-segoe font-extrabold bg-yellow-400 z-10">More info</button>
+                        <img id="imgPopularIndex1" src="" class="w-48 h-60 z-0 rounded-xl">
                     </div>
-                    <div class="homecontainer-centermenu-popular-alt-box">
-                        <h3 class="homecontainer-centermenu-popular-alt-box-h1" id="moviePopularTitleIndex2">Title</h3>
-                        <button class="homecontainer-centermenu-popular-alt-box-favoritebutton" onclick="setFavorite(this)" id="favoriteButtonIndex2" ><i class="fa-regular fa-heart fa-xl" style="color: #ffffff;" id="favoriteIconIndex2" ></i></button>
-                        <button class="homecontainer-centermenu-popular-alt-box-morebutton">More info</button>
-                        <img id="imgPopularIndex2" src="" class="homecontainer-centermenu-popular-alt-box-img" >
+                    <div class="relative w-48 h-60 bg-white rounded-xl">
+                        <h3 class="absolute left-3 text-xl text-white font-segoe font-bold z-10 bg-gray-600" id="moviePopularTitleIndex2">Title</h3>
+                        <button class="absolute bottom-4 left-3 bg-red-700 w-9 h-9 border-none rounded-lg z-10" onclick="setFavorite(this)" id="favoriteButtonIndex0" onclick="setFavorite(this)" id="favoriteButtonIndex2" ><i class="fa-regular fa-heart fa-xl" style="color: #ffffff;" id="favoriteIconIndex2" ></i></button>
+                        <button class="absolute right-3 bottom-4 h-9 w-32 rounded-xl border-none text-black text-sm font-segoe font-extrabold bg-yellow-400 z-10">More info</button>
+                        <img id="imgPopularIndex2" src="" class="w-48 h-60 z-0 rounded-xl">
                     </div>
                 </div>
             </div>            

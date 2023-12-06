@@ -3,6 +3,10 @@
 @import url('/style/centermenu/centermenu.css');
 @import url('/style/favorites/favorites.css');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html , body{
     width: 100%;
     height: 100%;

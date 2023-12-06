@@ -78,8 +78,8 @@ function showFavorites() {
         elementChildFavoriteButton.classList.add('homecontainer-centermenu-popular-alt-box-favoritebutton');
         elementChildFavoriteButton.id = 'favoriteButtonMovie' + k;
         elementChildFavoriteButton.addEventListener('click',function(){
-            favoriteChanged(this);
-            changeIconFavorite(this);
+            removeFavorite('movie',k);
+            changeIconFavorite('movie',k);
         });
         elementChildFavoriteButton.appendChild(elementChildButtonIcon);
         
@@ -120,8 +120,8 @@ function showFavorites() {
         elementChildFavoriteButton.classList.add('homecontainer-centermenu-popular-alt-box-favoritebutton');
         elementChildFavoriteButton.id = 'favoriteButtonTVShow' + k;
         elementChildFavoriteButton.addEventListener('click',function(){
-            favoriteChanged(this);
-            changeIconFavorite(this)
+            removeFavorite('tv', k);
+            changeIconFavorite('tv',k)
         });
         elementChildFavoriteButton.appendChild(elementChildButtonIcon);
         
@@ -137,19 +137,9 @@ function showFavorites() {
     }
 }
 
-function favoriteChanged(element){
-    switch(element.id.substring(0,15)){
-        case 'favoriteButtonT':{
-            removeFavorite('tv',element);
-        }
-        case 'favoriteButtonM':{
-            removeFavorite('movie',element);
-        }
-    }
-}
 
-function removeFavorite(conditon , element){
-    let index = element.id.substring(element.id.length-1,element.id.length);
+
+function removeFavorite(conditon , index){
     if(conditon == 'movie'){
         let favorites = JSON.parse(localStorage.getItem('favoriteMovies'));
         favorites = favorites.filter(id => id != favorites[index]);
@@ -162,9 +152,9 @@ function removeFavorite(conditon , element){
     }
 }
 
-function changeIconFavorite(element){
-    if(element.id.substring(12,13) == 'T'){
-        var elementIconFavorite = document.getElementById('favoriteIconTVShow'+ element.id.substring(element.id.length-1,element.id.length));
+function changeIconFavorite(platform , index){
+    if(platform == 'tv'){
+        var elementIconFavorite = document.getElementById('favoriteIconTVShow'+ index);
         if(elementIconFavorite.classList.contains('fa-regular')){
             elementIconFavorite.classList.remove('fa-regular');
             elementIconFavorite.classList.add('fa-solid');
@@ -175,7 +165,7 @@ function changeIconFavorite(element){
         }
     }
     else{
-        var elementIconFavorite = document.getElementById('favoriteIconMovie'+ element.id.substring(element.id.length-1,element.id.length));
+        var elementIconFavorite = document.getElementById('favoriteIconMovie'+ index);
         if(elementIconFavorite.classList.contains('fa-regular')){
             elementIconFavorite.classList.remove('fa-regular');
             elementIconFavorite.classList.add('fa-solid');
